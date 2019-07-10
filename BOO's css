@@ -1,0 +1,555 @@
+.banner {margin:5em auto;}
+.banner a.banner-content {margin:5em auto;text-align:center;}
+h1.blog-title {
+    letter-spacing:.25em;
+    padding-left:.25em;
+    {block:PermalinkPage}
+    display:none;
+    {/block:PermalinkPage}
+    font-size:{text:Banner Font Size};
+    font-weight:{select:Banner Font Weight};
+    font-family:{text:Banner Font}, sans-serif;
+    font-style:{block:ifBannerItalic}italic{/block:ifBannerItalic};
+    text-transform:{block:ifBannerAa}uppercase{/block:ifBannerAa};
+    color:{color:Banner};
+    }
+.description {
+    font-family:{text:Banner Font};
+    {block:ifDescriptionItalic}
+    font-style:italic;
+    {/block:ifDescriptionItalic}
+    font-size:calc({text:Banner Font Size} / 2.5);
+    color:{color:Banner}90;
+    text-align:center;
+    margin-bottom:2em;
+    }    
+/*-----------------------------------------------------------NAVBAR----*/
+.dropdown .dropbtn:focus {color:color:{color:Link Hover};}
+.dropdown .dropbtn .fas {font-size:10px;margin-left:1px;}
+.column .lnr {font-size:9px;margin-right:5px;}
+.row {height:auto;}
+.row:after {content: "";display: table;clear: both;}
+.dropdown-content .column {float:left;padding:0.5em 0 0.5em 0;}
+.dropdown-content .column-1 {width:60%;}
+.dropdown-content .column-2 {width:40%;}
+.dropdown-content .column ul hr {
+    margin:.25em 0 .25em 0;
+    border-top:.1px solid {color:Nav Links}40;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    }
+.dropdown-content {
+    box-sizing:border-box;
+    margin:.5em 0 0 0;
+    padding:1em;
+    line-height:140%;
+    background:white;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:rgba(0, 0, 0, .15) 0 1px 3px;
+    }
+.dropdown-content .column ul {
+    margin-left:0;
+    padding-left:0;
+    margin-top:0px;
+    margin-bottom:0px;
+    }
+.dropdown-content h3 {
+    font-family:{text:Header Font};
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#000;
+    font-size:10px;
+    margin:0;
+    }
+.dropdown-content a  {
+    color:{color:Nav Links};
+    font-family:{text:Navbar Font};
+    font-size:12px;
+    }
+.dropdown-content {
+    display:none;
+    position:absolute;
+    min-width:400px;
+    z-index:1;
+    }
+
+.show {display: block;}
+
+.nav-links .group {display:inline-block;}
+.nav-links .links-group a.label {max-height:36px;}
+.nav-links .img-group {vertical-align:middle;}
+
+/*----AVATAR and/or LOGO----*/
+.nav-links a img {width:36px;height:36px;display:inline-block;}
+.logo-circle, .logo-square {object-fit: cover;}
+.avatar-circle, .logo-circle {border-radius:100%;}
+.avatar-square, .logo-square {border-radius:4px;}    
+
+nav {
+    padding:12px 1em;
+    transition: top 0.3s;
+    {block:IndexPage}
+    top:-65px;
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    top:0;
+    {/block:PermalinkPage}
+    z-index:999;
+    position:fixed;
+    width:100vw;
+    background:{color:Navbar};
+    word-break:break-word;
+    height:auto;
+    }
+    
+.nav-links a.label {margin-right:1.5em;}
+.img-group a, .links-group a, .dropdown .dropbtn {
+    margin-left:.5em;
+    margin-right:.5em;
+    display:inline-block;
+    vertical-align:middle;
+    font-family:{text:Navbar Font};
+    font-size:12px;
+    font-weight:normal;
+    letter-spacing:{select:Navbar Letter Spacing};
+    color:{color:Nav Links};
+    transition: all 200ms ease-in-out;
+    }
+.nav-links a:hover, .dropdown:hover .dropbtn {color:{color:Link Hover};}
+.nav-links {width:100vw;list-style-type:none;}
+.nav-links .label.current-page {color:{color:Current Page};}
+.hcontrols .lnr {font-size:12px;}
+
+
+/*----TUMBLR CONTROLS----*/
+iframe.tmblr-iframe {
+    z-index:9999999999;
+    top:0;
+    left:auto;
+    padding-right:2em;
+    opacity:0; 
+     filter:invert(1) contrast(200%);
+        -webkit-filter:invert(1) contrast(200%);
+        -o-filter:invert(1) contrast(200%);
+        -moz-filter:invert(1) contrast(200%);
+        -ms-filter:invert(1) contrast(200%);
+    transform:scale(.7);
+    transform-origin:right top;
+    vertical-align:top;
+    transition:all 200ms ease-in-out;
+}
+iframe.tmblr-iframe:hover {opacity:0.4;}
+
+.hcontrols {
+    padding:.5em 0 .5em 0;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999999999;
+    width:24px;
+    height:64px;
+    display:inline-block;
+    vertical-align:middle;
+    }
+
+.hcontrols .lnr {color:{color:Navbar Links};}
+
+/*------------------------------------------------------MAIN LAYOUT----*/
+
+body {
+    margin: 0;
+    color:{color:Text};
+    background:{BackgroundColor};
+    font-size:{select:Body Font Size};
+    font-family:{text:Body Font}, Helvetica Neue, sans-serif;
+    line-height:160%;
+    text-decoration:none;
+    text-rendering: optimizeLegibility;
+    }
+
+/*----POSTS TAGGED BY----*/
+.tag-page {
+    text-align:center;
+    font-size:1.2em;
+    font-family:{text:Body Font};
+    color:{TitleColor}90;
+    font-weight:400;
+    margin-top:-1em;
+    margin-bottom:2em;
+    text-transform:capitalize;
+    }
+
+/*------------------------------------------------------------POSTS----*/
+
+/*----HEADERS and TITLES----*/
+.post-content h2 b, .post-content h2 strong {color:#000000;}
+.post-content h1 {margin-bottom:1em;text-align:center;}   
+.post-content h1, .post-content h2 {
+    color:{TitleColor};
+    font-family:{text:Header Font}, Helvetica Neue, sans-serif;
+    font-weight:700;
+    }
+.post-title a:hover {color:{color:Link Hover};}
+.post-title a {
+    color:{TitleColor};
+    font:bold 1.2em {text:Header Font}, Helvetica Neue, sans-serif;
+    text-transform:none;
+    width:auto;
+    }
+
+/*----POST CONTENT----*/
+b, strong {color:{color:Bold};font-weight:600;}
+article hr {width:100%;margin-left:0px;border:.5px solid {color:Text}20;}
+code:not(blockquote code) {
+    background:{color:Text}20;
+    padding:0px 4px;
+    border-radius:2px;
+    opacity:0.8;}
+blockquote code {font-family:Source Code Pro, monospace;font-size:0.8em;}
+.caption small {font-size:80%}        
+.caption blockquote code {
+    font-family:Source Code Pro, Consolas, monospace;
+    font-size:0.8em;
+    }
+
+/*----LINKS----*/
+a {color:{TitleColor};transition:all 200ms ease-in-out;}
+a:hover {color:{color:Link Hover};}
+a, a:hover {text-decoration:none;}
+p a {font-weight:normal;transition: all 200ms ease-in-out;}
+p a:hover {color:{color:Link Hover};}
+.post-content a {color:{TitleColor};}
+.post-content a:hover {color:{color:Link Hover};}
+
+/*----LISTS----*/
+ul, menu, dir {list-style-type: circle;}
+li + ul {list-style-type:none;}
+li + ul li:before {content:'•';padding:.5em;color:{color:Bold};}
+hr {width:100%;margin-left:0px;border:.1px dashed {color:Text}40;}  
+
+/*----BLOCKQUOTES----*/
+.post-content blockquote b,
+.post-content blockquote strong {color:{color:Text};}
+.post-content blockquote:not(.blockquote-b, .blockquote-c) {
+    color:{color:Text}90;
+    border-left:1px solid {color:Text}20;
+    margin-left:2em;
+    padding-left:1em;
+    }
+blockquote.blockquote-b {
+    line-height:130%;
+    font-weight:300;
+    background:{color:Text}10;
+    padding:10px;
+    color:{color:Text};
+    margin-left:0px;
+    border-left:1px solid {color:Text}20;
+    }
+blockquote.blockquote-c { 
+    font-size:12px;
+    background:{color:Text}10;
+    padding:10px;
+    color:{color:Text};
+    margin-left:2em;
+    border-left:1px solid {color:Text}20;   
+    }
+
+/*----READ MORE----*/
+.read_more_container, .special-link-container {text-align:center;}
+a.read_more:hover, a.special-link:hover, a.special-label:hover {
+    color:{color:Link Hover};
+    border:.5px solid {color:Link Hover};
+    }   
+a.read_more, a.special-link, .special-link {
+    color:{TitleColor};
+    font-family:{text:Header Font}, Helvetica Neue, arial, sans-serif;
+    text-transform:uppercase;
+    background:white;
+    text-align:center;
+    letter-spacing:1.5px;
+    font-size:calc({select:Body Font Size} - 20%);
+    font-weight:500;
+    text-decoration:none;
+    padding:5px;
+    border:.5px solid {TitleColor};
+    border-radius:3px;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 1px 2px #00000010;
+    }  
+
+/*-------------------------------------------------------POST TYPES----*/
+
+/*----LINK----*/
+.link-wrapper {
+    background:{color:Text}20;
+    border:1px solid {color:Text}30;
+    border-radius:4px;
+    box-shadow: 0 1px 2px #00000010;
+    transition: all 200ms ease-in-out;
+    }
+.link-wrapper:hover {border-color:{color:Link Hover}60;background:{color:Link Hover}20;}
+.link-text-wrapper{color:{color:Text};transition: all 200ms ease-in-out;}
+.link-text-wrapper:hover {color:{color:Link Hover};}
+.link-title::after {display:none;}
+
+/*----ASK----*/
+.note-item .avatar img {border-radius:2em;padding:2px;}
+.note-item-answerer .avatar img {border:1px solid {color:Text}30;}
+.note-item-asker .avatar img {border:1px solid {color:Answer Posts}30;}
+.note-item .text:after {display:none;}
+.note-item .text {font-size:calc({select:Body Font Size} - 20%);line-height:150%;}
+.note-item-asker .text {
+    background:{color:Answer Posts}20;
+    border: 1px solid {color:Answer Posts}20;
+    color:{color:Answer Posts};
+    }
+.note-item-answerer .text {
+    background:{color:Text}10;
+    border: 1px solid {color:Text}10;
+    color:{color:Text}90;
+    }    
+.note-item .text .answerer, 
+.note-item .text .asker {
+    color:{color:Bold};
+    font-style:italic;
+    font-size:calc({select:Body Font Size} - 20%);
+    }
+
+/*----CHAT----*/
+.conversation .chat {font-family:{text:Body Font};margin-bottom:8px;}
+.conversation .label {
+    color:{color:Bold};
+    font-family:{text:Header Font};
+    font-size:calc({select:Body Font Size} - 20%);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1.25px;
+    }
+
+/*----PHOTO and VIDEO----*/
+img{height:auto;width:auto;margin:0 auto;}
+.video-wrapper {height:auto;max-width:700px;margin:0 auto;}
+.video .posts {min-width:700px;}
+.vignette, #vignette {opacity:0;}
+.lightbox-image, #tumblr_lightbox img {
+    box-shadow:none !important;
+    border-radius:3px !important;
+    max-width:none;
+    }
+.lightbox-image, #tumblr_lightbox img {
+    border:none !important;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    }
+.lightbox-caption, #tumblr_lightbox_caption {
+    font-family:{text:Body Font};
+    font-weight:normal;
+    }    
+
+/*----QUOTES----*/
+.quote .source {margin-top:10px;position:relative;font-size:calc({select:Body Font Size} - 20%);text-align:right;}
+.quote .source:before {content: "";display:none;}
+.quote .post-content blockquote:before {letter-spacing:1px;}
+.quote .post-content blockquote:after {margin-left:0;letter-spacing:1px;}
+.quote .post-content blockquote {
+    color:{color:Bold};
+    border:none;
+    font-family:{text:Header Font}, Helvetica Neue, sans-serif;
+    font-size:calc({select:Body Font Size} + 150%);
+    font-weight:bold;
+    line-height:160%;
+    margin:0;
+    padding:0 5px 0 0;
+    quotes: "“" "”" "‘" "’";
+    word-break:break-word;
+    }
+
+/*----REBLOG----*/
+.post-avatar-image {
+    border-radius:100%;
+    padding:2px;
+    border:.25px solid {TitleColor}40;
+    transition: all 200ms ease-in-out;
+    }
+.post-avatar-image:hover {border-color:{color:Link Hover};}
+
+/*------------------------------------------------------POST FOOTER----*/
+
+/*----TAGS----*/
+a.meta-item.tag-link:before {content:'';} /* removes the # */
+a.meta-item.tag-link{
+    color:{AccentColor};
+    border:1px solid {AccentColor}40;
+    padding: 0.3em 0.8em;
+    text-transform:none;
+    border-radius:2em;
+    transition: all 200ms ease-in-out;
+    margin:.5em;
+    }
+
+a.meta-item.tag-link:hover {
+    color:{color:Link Hover};
+    border-color:{color:Link Hover}60;
+    }
+
+/*----LIKE and REBLOG----*/
+.post-controls {color:{TitleColor};transition: all 200ms ease-in-out;}
+.post-controls .control .like_button:hover, 
+.post-controls .control .reblog_button:hover,
+.post-controls .control .share:hover {
+    color: {color:Link Hover};
+    transition: all 200ms ease-in-out;
+    }
+.reblog-link:hover:before {color:{TitleColor};}
+
+/*----POST NOTES----*/
+.date-notes, .post-notes, .post-extra {font-family:{text:Body Font};}
+.date-notes {font-size:.8em;transition: all 200ms ease-in-out;}
+.post-notes {color:{TitleColor};}
+.post-extra {
+    font-size: calc({select:Body Font Size} - 33.333%);
+    width:auto;
+    line-height:130%;
+    }
+a.meta-item.post-notes:hover, a.meta-item.note-count:hover {color:{color:Link Hover};}
+a.meta-item.post-notes, a.meta-item.note-count {
+    color:{TitleColor};
+    transition:all 200ms ease-in-out;
+    }
+
+/*----PERMALINK POST NOTES----*/
+.post-notes ol li {list-style:none;}
+.post-notes ol.notes li.note {padding:1em;color:{color:Text}90;}
+.like .avatar_frame:after {padding:2px;}
+.reply .avatar_frame:after {padding:2px;}
+.reblog:not(.original_post) .avatar_frame:after {padding:2px;}
+.post-notes ol.notes li.note img.avatar {
+    height:26px;
+    width:26px;
+    border-radius:2px;
+    margin-right:5px;
+    }
+.post-notes ol.notes li.note span.action {font-weight:normal;}
+.post-notes ol.notes li.note .answer_content {font-weight:normal;}
+.post-notes ol.notes li.note blockquote a {
+    text-decoration:none;
+    color:{color:Text}90;
+    }
+.post-notes ol.notes li.note blockquote {
+    border-left:1px solid {color:Text}20;
+    margin-left:4em;
+    padding-left:1em;
+    }
+.post-notes {width:100%;}
+/*-----------------------------------------------------------FOOTER----*/
+
+/*----PAGINATION----*/
+
+.pagination a {border-radius:4px;padding:6px 16px;}
+.pagination {margin:5% 0 5% 0;text-align:center;}
+.pagination .lnr {font-size:10px;}
+.jump_page {
+    color:{TitleColor};
+    background-color:{BackgroundColor};
+    border-radius:4px;padding:6px 16px;}
+.jump_page, .current_page, .jump_page:hover {
+    font-family:{text:Header Font};
+    font-size:12px;
+    text-decoration:none;
+    margin:0 2px;
+    border-radius:4px;padding:6px 16px;
+    } 
+.current_page, .jump_page:hover {
+    color:{color:Link Hover};
+    background-color:{color:Link Hover}20;
+    border-radius:4px;padding:6px 16px;
+    }  
+
+/*----SCROLL TO TOP----*/    
+#totop {
+    z-index:900;
+    cursor:pointer;
+    width:51px;
+    height:51px;
+    bottom:10px; 
+    right:10px;
+    position:fixed;
+    display:none;
+    text-decoration:none;
+    overflow:hidden;
+    border:none;
+    } 
+
+/*--------------------------------------------------PAGES and EXTRA----*/
+
+.special-label {
+    background:{TitleColor}20; 
+    font-size: 10px;
+    color:{TitleColor};
+    font-family:{text:Header Font}, Helvetica Neue, arial, sans-serif;
+    text-transform:uppercase;
+    text-align:center;
+    letter-spacing:1.5px;
+    font-weight:500;
+    text-decoration:none;
+    padding:5px;
+    border:.5px solid {TitleColor}40;
+    border-radius:3px;
+    box-shadow: 0 1px 2px #00000010;
+    }
+
+/*----FOR TAGS PAGE----*/
+p a.tag-all, p a.tag-media  {
+    line-height:160%;
+    font-size:12px;
+    text-align:center;
+    border-radius: 3px;
+    text-transform:none;
+    margin-right: 0.5em;
+    margin-bottom:0px;
+    padding: 0.3em 0.85em;
+    transition: all 200ms ease-in-out;
+    }
+p a.tag-all {
+    color:{TitleColor};
+    background:{TitleColor}20;
+    border:1px solid {TitleColor}20;
+    }
+p a.tag-media {
+    color:{color:Text};
+    background:{color:Text}20;
+    border:1px solid {color:Text}20;
+    }    
+p a.tag-all:hover, p a.tag-media:hover {
+    background:#fff;
+    color:{color:Link Hover};
+    border-color:{color:Link Hover}60;
+    box-shadow: 0 1px 2px #00000010;
+    }
+h3.tags-h3 {
+    font-family:{text:Header Font};
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#000;
+    font-size:12px;
+    }
+
+/*----HIDE SPECIFIC TAGS ON INDEX PAGE----*/
+a.meta-item.tag-link[name~= x], 
+a.meta-item.tag-link[name~= featured], 
+a.meta-item.tag-link[name~=texas],
+a.meta-item.tag-link[name~=predator], 
+a.meta-item.tag-link[name~=predators], 
+a.meta-item.tag-link[name~=avp], 
+a.meta-item.tag-link[name~=tcm], 
+a.meta-item.tag-link[name~=beginning],
+a.meta-item.tag-link[name~=friday], 
+a.meta-item.tag-link[name~=camp], 
+a.meta-item.tag-link[name~=Camp],
+a.meta-item.tag-link[name~=horror], 
+a.meta-item.tag-link[name~=imagine],
+a.meta-item.tag-link[name~=imagines],
+a.meta-item.tag-link[name~=slasher] {
+    {block:IndexPage}display:none;{/block:IndexPage}}
